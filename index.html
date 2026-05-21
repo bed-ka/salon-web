@@ -2,550 +2,267 @@
 <html lang="cs">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>3MKP</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-
-      font-family:'Montserrat', sans-serif;
-
-      min-height:100vh;
-
-      overflow-x:hidden;
-
-      color:#705d4d;
-
-      background:
-      radial-gradient(circle at top left, #f3ddc4 0%, transparent 30%),
-      radial-gradient(circle at bottom right, #d48b44 0%, transparent 28%),
-      linear-gradient(to bottom, #f7f2ea, #efe4d5);
-
-      position:relative;
-    }
-
-    /* ===== DEKORACE ===== */
-
-    .leaf-left{
-      position:absolute;
-      left:-40px;
-      top:330px;
-
-      width:220px;
-
-      opacity:0.13;
-    }
-
-    .leaf-right{
-      position:absolute;
-      right:-20px;
-      top:180px;
-
-      width:180px;
-
-      opacity:0.11;
-    }
-
-    /* ===== TOPBAR ===== */
-
-    .topbar{
-
-      height:95px;
-
-      display:flex;
-      align-items:center;
-
-      padding-left:40px;
-
-      background:
-      rgba(255,255,255,0.45);
-
-      backdrop-filter:blur(12px);
-
-      border-bottom:
-      1px solid rgba(255,255,255,0.35);
-
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
-
-    .logo img{
-      width:58px;
-      height:58px;
-      border-radius:50%;
-    }
-
-    .logo h1{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:52px;
-
-      font-weight:400;
-
-      color:#c59743;
-
-      letter-spacing:2px;
-    }
-
-    /* ===== HERO ===== */
-
-    .hero{
-
-      padding:
-      40px
-      40px
-      100px;
-
-      position:relative;
-    }
-
-    .center{
-
-      text-align:center;
-
-      margin-bottom:45px;
-    }
-
-    .center .welcome{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:42px;
-
-      font-style:italic;
-
-      color:#b68f60;
-
-      margin-bottom:5px;
-    }
-
-    .center h2{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:110px;
-
-      font-weight:400;
-
-      color:#b88b3b;
-
-      line-height:0.9;
-
-      margin-bottom:25px;
-    }
-
-    .center p{
-
-      font-size:26px;
-
-      line-height:1.7;
-
-      max-width:700px;
-
-      margin:auto;
-
-      color:#887260;
-    }
-
-    /* ===== GRID ===== */
-
-    .grid{
-
-      max-width:1450px;
-
-      margin:auto;
-
-      display:grid;
-
-      grid-template-columns:
-      repeat(2, 1fr);
-
-      gap:55px;
-    }
-
-    /* ===== KARTY ===== */
-
-    .card{
-
-      position:relative;
-
-      overflow:hidden;
-
-      text-decoration:none;
-
-      height:360px;
-
-      transition:0.45s;
-
-      box-shadow:
-      0 25px 60px rgba(0,0,0,0.08);
-    }
-
-    .card:hover{
-
-      transform:
-      translateY(-8px)
-      scale(1.02);
-    }
-
-    /* ===== ORGANICKÉ TVARY ===== */
-
-    .shape1{
-      border-radius:
-      58% 42% 38% 62% /
-      46% 41% 59% 54%;
-    }
-
-    .shape2{
-      border-radius:
-      37% 63% 58% 42% /
-      45% 35% 65% 55%;
-    }
-
-    .shape3{
-      border-radius:
-      65% 35% 43% 57% /
-      58% 53% 47% 42%;
-    }
-
-    .shape4{
-      border-radius:
-      44% 56% 61% 39% /
-      47% 58% 42% 53%;
-    }
-
-    .card img{
-
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-    }
-
-    /* ===== OVERLAY ===== */
-
-    .overlay{
-
-      position:absolute;
-
-      inset:0;
-
-      background:
-      linear-gradient(
-      to top,
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.05)
-      );
-
-      display:flex;
-
-      flex-direction:column;
-
-      justify-content:flex-end;
-
-      padding:35px;
-    }
-
-    .overlay h3{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:56px;
-
-      font-weight:400;
-
-      margin-bottom:8px;
-    }
-
-    .overlay p{
-
-      font-size:21px;
-
-      line-height:1.6;
-
-      max-width:340px;
-
-      color:white;
-    }
-
-    /* ===== BARVY ===== */
-
-    .massage h3{
-      color:#ffd29d;
-    }
-
-    .mani h3{
-      color:#d7efdb;
-    }
-
-    .solarium h3{
-      color:#ffc56e;
-    }
-
-    .tcm h3{
-      color:#dcc6ff;
-    }
-
-    /* ===== MINI KARTY ===== */
-
-    .small-grid{
-
-      display:flex;
-
-      justify-content:center;
-
-      gap:35px;
-
-      margin-top:65px;
-
-      flex-wrap:wrap;
-    }
-
-    .small-card{
-
-      width:290px;
-
-      padding:28px;
-
-      text-decoration:none;
-
-      color:#79624f;
-
-      background:
-      rgba(255,255,255,0.58);
-
-      backdrop-filter:blur(10px);
-
-      box-shadow:
-      0 12px 35px rgba(0,0,0,0.06);
-
-      transition:0.3s;
-
-      border-radius:
-      46% 54% 60% 40% /
-      55% 43% 57% 45%;
-    }
-
-    .small-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .small-card h4{
-
-      font-family:'Cormorant Garamond', serif;
-
-      font-size:38px;
-
-      margin-bottom:10px;
-
-      font-weight:400;
-    }
-
-    .small-card p{
-
-      font-size:18px;
-
-      line-height:1.5;
-    }
-
-    /* ===== RESPONSIVE ===== */
-
-    @media(max-width:1000px){
-
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .center h2{
-        font-size:75px;
-      }
-
-      .overlay h3{
-        font-size:42px;
-      }
-
-      .center p{
-        font-size:20px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3MKP</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: Georgia, serif;
+
+/* jemné hřejivé pozadí */
+background:
+radial-gradient(circle at top left, #f3ddc4, transparent 40%),
+radial-gradient(circle at top right, #e2b07a, transparent 35%),
+radial-gradient(circle at bottom, #f7efe5, #efe2d3);
+
+min-height:100vh;
+color:#6e5a4a;
+overflow-x:hidden;
+}
+
+/* ===== TOP BAR ===== */
+
+.topbar{
+height:85px;
+display:flex;
+align-items:center;
+padding-left:40px;
+background:rgba(255,255,255,0.55);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+}
+
+.logo h1{
+font-size:42px;
+font-weight:300;
+color:#c79a4a;
+}
+
+/* ===== HERO TEXT ===== */
+
+.hero{
+text-align:center;
+padding:50px 20px 30px;
+}
+
+.hero h2{
+font-size:80px;
+font-weight:300;
+color:#b8873a;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:22px;
+max-width:600px;
+margin:0 auto;
+line-height:1.6;
+}
+
+/* ===== GRID ===== */
+
+.grid{
+max-width:1200px;
+margin:40px auto;
+display:grid;
+grid-template-columns:repeat(2, 1fr);
+gap:35px;
+padding:0 20px;
+}
+
+/* ===== CARD ===== */
+
+.card{
+height:320px;
+border-radius:40px;
+overflow:hidden;
+position:relative;
+text-decoration:none;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* obrázek */
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* text NA OBRÁZKU */
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:25px;
+background:linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+color:white;
+}
+
+.overlay h3{
+font-size:42px;
+font-weight:300;
+margin-bottom:5px;
+}
+
+.overlay p{
+font-size:18px;
+line-height:1.4;
+max-width:300px;
+}
+
+/* barevné akcenty */
+.massage h3{ color:#ffd39a; }
+.mani h3{ color:#d8f0dd; }
+.solarium h3{ color:#ffc77a; }
+.tcm h3{ color:#dcc8ff; }
+
+/* ===== MALÉ KARTY ===== */
+
+.bottom{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin:50px auto;
+padding:0 20px;
+max-width:900px;
+}
+
+.small{
+background:rgba(255,255,255,0.6);
+padding:25px;
+border-radius:30px;
+width:260px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+text-decoration:none;
+color:#6e5a4a;
+transition:0.3s;
+}
+
+.small:hover{
+transform:translateY(-5px);
+}
+
+.small h4{
+font-size:26px;
+margin-bottom:10px;
+font-weight:400;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h2{
+font-size:55px;
+}
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <!-- LISTY -->
+<!-- TOP -->
+<div class="topbar">
+<div class="logo">
+<img src="https://cdn-icons-png.flaticon.com/512/483/483361.png">
+<h1>3MKP</h1>
+</div>
+</div>
 
-  <img class="leaf-left" src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png">
+<!-- HERO -->
+<div class="hero">
+<h2>3MKP</h2>
+<p>
+Místo pro harmonii těla, mysli a energie.
+Tradiční péče v moderním pojetí.
+</p>
+</div>
 
-  <img class="leaf-right" src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png">
+<!-- GRID -->
+<div class="grid">
 
-  <!-- TOPBAR -->
+<a href="#" class="card massage">
+<img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200">
+<div class="overlay">
+<h3>Masáže</h3>
+<p>Uvolnění, regenerace a klid.</p>
+</div>
+</a>
 
-  <div class="topbar">
+<a href="#" class="card mani">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200">
+<div class="overlay">
+<h3>Mani / Pedi</h3>
+<p>Péče o ruce a nohy.</p>
+</div>
+</a>
 
-    <div class="logo">
+<a href="#" class="card solarium">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
+<div class="overlay">
+<h3>Solárium</h3>
+<p>Slunce kdykoliv potřebuješ.</p>
+</div>
+</a>
 
-      <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png">
+<a href="#" class="card tcm">
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200">
+<div class="overlay">
+<h3>TCM</h3>
+<p>Rovnováha a energie.</p>
+</div>
+</a>
 
-      <h1>3MKP</h1>
+</div>
 
-    </div>
+<!-- DOLNÍ MENU -->
+<div class="bottom">
 
-  </div>
+<a class="small" href="#">
+<h4>Kde nás najdete</h4>
+<p>Adresa a kontakt</p>
+</a>
 
-  <!-- HERO -->
+<a class="small" href="#">
+<h4>Poukazy</h4>
+<p>Dárky pro blízké</p>
+</a>
 
-  <section class="hero">
-
-    <div class="center">
-
-      <div class="welcome">
-        Vítejte v salonu
-      </div>
-
-      <h2>3MKP</h2>
-
-      <p>
-        Místo, kde se snoubí tradiční metody
-        s moderní péčí pro vaše tělo i mysl.
-      </p>
-
-    </div>
-
-    <!-- GRID -->
-
-    <div class="grid">
-
-      <!-- MASÁŽE -->
-
-      <a href="#" class="card shape1 massage">
-
-        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1400">
-
-        <div class="overlay">
-
-          <h3>Masáže</h3>
-
-          <p>
-            Dotek, který léčí,
-            uvolňuje a harmonizuje.
-          </p>
-
-        </div>
-
-      </a>
-
-      <!-- MANI PEDI -->
-
-      <a href="#" class="card shape2 mani">
-
-        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1400">
-
-        <div class="overlay">
-
-          <h3>Mani/Pedi</h3>
-
-          <p>
-            Péče a krása,
-            která začíná v detailu.
-          </p>
-
-        </div>
-
-      </a>
-
-      <!-- SOLÁRIUM -->
-
-      <a href="#" class="card shape3 solarium">
-
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1400">
-
-        <div class="overlay">
-
-          <h3>Solárium</h3>
-
-          <p>
-            Zdravé opálení
-            a chvíle relaxace.
-          </p>
-
-        </div>
-
-      </a>
-
-      <!-- TCM -->
-
-      <a href="#" class="card shape4 tcm">
-
-        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1400">
-
-        <div class="overlay">
-
-          <h3>Čínská medicína</h3>
-
-          <p>
-            Harmonie těla,
-            mysli a energie.
-          </p>
-
-        </div>
-
-      </a>
-
-    </div>
-
-    <!-- MALÉ KARTY -->
-
-    <div class="small-grid">
-
-      <a href="#" class="small-card">
-
-        <h4>📍 Kde nás najdete</h4>
-
-        <p>
-          Adresa, kontakt
-          a informace o salonu.
-        </p>
-
-      </a>
-
-      <a href="#" class="small-card">
-
-        <h4>🎁 Dárkové poukazy</h4>
-
-        <p>
-          Péče, která potěší
-          vaše blízké.
-        </p>
-
-      </a>
-
-    </div>
-
-  </section>
+</div>
 
 </body>
-
 </html>
