@@ -8,27 +8,78 @@
 
     <style>
 
-        body{
+        *{
             margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
             font-family: "Georgia", serif;
-            background:#f6f1ea;
             overflow-x:hidden;
-            color:#6b5645;
+
+            background:
+            radial-gradient(circle at top left, #f0dcc1 0%, transparent 35%),
+            radial-gradient(circle at bottom right, #d28d47 0%, transparent 35%),
+            radial-gradient(circle at center, #f7f1e8 0%, #efe5d7 100%);
+
+            color:#6e5947;
+            min-height:100vh;
+        }
+
+        /* ===== DEKORACE POZADÍ ===== */
+
+        .background-blur-1{
+            position:absolute;
+            width:600px;
+            height:600px;
+
+            background:#e7c79f;
+            border-radius:50%;
+
+            filter:blur(120px);
+
+            top:-200px;
+            left:-200px;
+
+            opacity:0.35;
+            z-index:-1;
+        }
+
+        .background-blur-2{
+            position:absolute;
+            width:500px;
+            height:500px;
+
+            background:#c57c36;
+            border-radius:50%;
+
+            filter:blur(140px);
+
+            bottom:-150px;
+            right:-150px;
+
+            opacity:0.25;
+            z-index:-1;
         }
 
         /* ===== HORNÍ LIŠTA ===== */
 
         .topbar{
+            width:100%;
             height:90px;
-            background:rgba(255,255,255,0.6);
-            backdrop-filter: blur(8px);
+
+            background:rgba(255,255,255,0.45);
+
+            backdrop-filter:blur(12px);
 
             display:flex;
             align-items:center;
 
             padding-left:40px;
 
-            box-shadow:0 2px 10px rgba(0,0,0,0.03);
+            border-bottom:
+            1px solid rgba(255,255,255,0.3);
         }
 
         .logo{
@@ -38,53 +89,50 @@
         }
 
         .logo img{
-            width:55px;
-            height:55px;
+            width:58px;
+            height:58px;
             border-radius:50%;
         }
 
         .logo h1{
-            font-size:48px;
+            font-size:46px;
+            color:#bf9244;
             font-weight:300;
-            margin:0;
-            color:#c59a42;
             letter-spacing:2px;
         }
 
-        /* ===== HLAVNÍ SEKCE ===== */
+        /* ===== HERO ===== */
 
         .hero{
             position:relative;
-            min-height:100vh;
-            padding:40px 20px 120px;
+            padding:60px 30px 100px;
         }
 
         .center-text{
             text-align:center;
-            margin-top:30px;
             margin-bottom:50px;
         }
 
         .center-text h2{
             font-size:28px;
+            color:#b28b5a;
             font-weight:300;
             margin-bottom:10px;
-            color:#a88452;
         }
 
         .center-text h3{
-            font-size:90px;
-            margin:0;
+            font-size:92px;
+            color:#bf9244;
             font-weight:300;
-            color:#b78a39;
+            margin-bottom:20px;
         }
 
         .center-text p{
-            font-size:26px;
-            line-height:1.6;
+            font-size:24px;
+            line-height:1.7;
             max-width:700px;
-            margin:25px auto 0;
-            color:#8c7460;
+            margin:auto;
+            color:#8a7460;
         }
 
         /* ===== KARTY ===== */
@@ -94,29 +142,55 @@
             margin:auto;
 
             display:grid;
-            grid-template-columns:repeat(2, 1fr);
-            gap:50px;
+            grid-template-columns:repeat(2,1fr);
+
+            gap:55px;
         }
 
         .card{
             position:relative;
+            height:360px;
+
             overflow:hidden;
 
-            border-radius:60px;
-
-            height:350px;
-
             text-decoration:none;
-            color:white;
 
-            transition:0.4s;
+            transition:0.45s;
 
             box-shadow:
-            0 15px 40px rgba(0,0,0,0.08);
+            0 20px 50px rgba(0,0,0,0.08);
         }
 
         .card:hover{
-            transform:translateY(-8px) scale(1.02);
+            transform:
+            translateY(-10px)
+            scale(1.02);
+        }
+
+        /* ===== TVARY KARET ===== */
+
+        .shape-1{
+            border-radius:
+            56% 44% 38% 62% /
+            42% 49% 51% 58%;
+        }
+
+        .shape-2{
+            border-radius:
+            37% 63% 53% 47% /
+            46% 39% 61% 54%;
+        }
+
+        .shape-3{
+            border-radius:
+            64% 36% 45% 55% /
+            57% 55% 45% 43%;
+        }
+
+        .shape-4{
+            border-radius:
+            41% 59% 63% 37% /
+            49% 58% 42% 51%;
         }
 
         .card img{
@@ -129,10 +203,11 @@
             position:absolute;
             inset:0;
 
-            background:linear-gradient(
+            background:
+            linear-gradient(
                 to top,
                 rgba(0,0,0,0.45),
-                rgba(0,0,0,0.1)
+                rgba(0,0,0,0.08)
             );
 
             display:flex;
@@ -144,32 +219,32 @@
 
         .overlay h4{
             font-size:48px;
-            margin:0 0 10px;
             font-weight:300;
+            margin-bottom:12px;
         }
 
         .overlay p{
-            font-size:22px;
+            font-size:21px;
             line-height:1.5;
-            max-width:350px;
+            max-width:340px;
         }
 
-        /* ===== BARVY ===== */
+        /* ===== BARVY TEXTŮ ===== */
 
         .massage h4{
-            color:#ffd39a;
-        }
-
-        .solarium h4{
-            color:#ffca7d;
+            color:#ffd39f;
         }
 
         .mani h4{
-            color:#d7f0df;
+            color:#d9f0df;
+        }
+
+        .solarium h4{
+            color:#ffcb83;
         }
 
         .tcm h4{
-            color:#dbc4ff;
+            color:#d9c7ff;
         }
 
         /* ===== MALÉ KARTY ===== */
@@ -179,25 +254,33 @@
             justify-content:center;
             gap:30px;
 
-            margin-top:50px;
+            margin-top:60px;
+
             flex-wrap:wrap;
         }
 
         .small-card{
-            width:280px;
-            background:white;
+            width:290px;
 
-            border-radius:35px;
+            background:
+            rgba(255,255,255,0.65);
 
-            padding:25px;
+            backdrop-filter:blur(10px);
+
+            padding:28px;
 
             text-decoration:none;
-            color:#8b745c;
+
+            color:#7c6652;
+
+            transition:0.3s;
 
             box-shadow:
             0 10px 30px rgba(0,0,0,0.05);
 
-            transition:0.3s;
+            border-radius:
+            45% 55% 58% 42% /
+            53% 42% 58% 47%;
         }
 
         .small-card:hover{
@@ -206,13 +289,12 @@
 
         .small-card h5{
             font-size:28px;
-            margin:0 0 10px;
+            margin-bottom:12px;
             font-weight:400;
         }
 
         .small-card p{
             font-size:18px;
-            margin:0;
             line-height:1.5;
         }
 
@@ -244,6 +326,11 @@
 
 <body>
 
+    <!-- POZADÍ -->
+
+    <div class="background-blur-1"></div>
+    <div class="background-blur-2"></div>
+
     <!-- HORNÍ LIŠTA -->
 
     <div class="topbar">
@@ -258,7 +345,7 @@
 
     </div>
 
-    <!-- HLAVNÍ OBSAH -->
+    <!-- HLAVNÍ SEKCE -->
 
     <section class="hero">
 
@@ -270,7 +357,7 @@
 
             <p>
                 Místo, kde se snoubí tradiční metody
-                s moderní péčí pro vaše tělo i mysl.
+                s moderní péčí o tělo, mysl a energii.
             </p>
 
         </div>
@@ -281,7 +368,7 @@
 
             <!-- MASÁŽE -->
 
-            <a href="#" class="card massage">
+            <a href="#" class="card shape-1 massage">
 
                 <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200">
 
@@ -291,7 +378,7 @@
 
                     <p>
                         Dotek, který léčí,
-                        uvolňuje a harmonizuje tělo.
+                        uvolňuje a harmonizuje.
                     </p>
 
                 </div>
@@ -300,17 +387,17 @@
 
             <!-- MANI/PEDI -->
 
-            <a href="#" class="card mani">
+            <a href="#" class="card shape-2 mani">
 
-                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200">
 
                 <div class="overlay">
 
                     <h4>Mani/Pedi</h4>
 
                     <p>
-                        Krása, která začíná
-                        v detailu.
+                        Péče a krása,
+                        která začíná v detailu.
                     </p>
 
                 </div>
@@ -319,9 +406,9 @@
 
             <!-- SOLÁRIUM -->
 
-            <a href="#" class="card solarium">
+            <a href="#" class="card shape-3 solarium">
 
-                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
 
                 <div class="overlay">
 
@@ -329,7 +416,7 @@
 
                     <p>
                         Zdravé opálení
-                        po celý rok.
+                        a chvíle relaxace.
                     </p>
 
                 </div>
@@ -338,9 +425,9 @@
 
             <!-- TCM -->
 
-            <a href="#" class="card tcm">
+            <a href="#" class="card shape-4 tcm">
 
-                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200">
 
                 <div class="overlay">
 
@@ -348,7 +435,7 @@
 
                     <p>
                         Harmonie těla,
-                        mysli a energie.
+                        mysli a životní energie.
                     </p>
 
                 </div>
