@@ -1,27 +1,392 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
+
 <head>
-  <title>Salon 3MKP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3MKP</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family: "Georgia", serif;
+            background:#f6f1ea;
+            overflow-x:hidden;
+            color:#6b5645;
+        }
+
+        /* ===== HORNÍ LIŠTA ===== */
+
+        .topbar{
+            height:90px;
+            background:rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+
+            display:flex;
+            align-items:center;
+
+            padding-left:40px;
+
+            box-shadow:0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .logo img{
+            width:55px;
+            height:55px;
+            border-radius:50%;
+        }
+
+        .logo h1{
+            font-size:48px;
+            font-weight:300;
+            margin:0;
+            color:#c59a42;
+            letter-spacing:2px;
+        }
+
+        /* ===== HLAVNÍ SEKCE ===== */
+
+        .hero{
+            position:relative;
+            min-height:100vh;
+            padding:40px 20px 120px;
+        }
+
+        .center-text{
+            text-align:center;
+            margin-top:30px;
+            margin-bottom:50px;
+        }
+
+        .center-text h2{
+            font-size:28px;
+            font-weight:300;
+            margin-bottom:10px;
+            color:#a88452;
+        }
+
+        .center-text h3{
+            font-size:90px;
+            margin:0;
+            font-weight:300;
+            color:#b78a39;
+        }
+
+        .center-text p{
+            font-size:26px;
+            line-height:1.6;
+            max-width:700px;
+            margin:25px auto 0;
+            color:#8c7460;
+        }
+
+        /* ===== KARTY ===== */
+
+        .cards{
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:repeat(2, 1fr);
+            gap:50px;
+        }
+
+        .card{
+            position:relative;
+            overflow:hidden;
+
+            border-radius:60px;
+
+            height:350px;
+
+            text-decoration:none;
+            color:white;
+
+            transition:0.4s;
+
+            box-shadow:
+            0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .card:hover{
+            transform:translateY(-8px) scale(1.02);
+        }
+
+        .card img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .overlay{
+            position:absolute;
+            inset:0;
+
+            background:linear-gradient(
+                to top,
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.1)
+            );
+
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-end;
+
+            padding:35px;
+        }
+
+        .overlay h4{
+            font-size:48px;
+            margin:0 0 10px;
+            font-weight:300;
+        }
+
+        .overlay p{
+            font-size:22px;
+            line-height:1.5;
+            max-width:350px;
+        }
+
+        /* ===== BARVY ===== */
+
+        .massage h4{
+            color:#ffd39a;
+        }
+
+        .solarium h4{
+            color:#ffca7d;
+        }
+
+        .mani h4{
+            color:#d7f0df;
+        }
+
+        .tcm h4{
+            color:#dbc4ff;
+        }
+
+        /* ===== MALÉ KARTY ===== */
+
+        .small-cards{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+
+            margin-top:50px;
+            flex-wrap:wrap;
+        }
+
+        .small-card{
+            width:280px;
+            background:white;
+
+            border-radius:35px;
+
+            padding:25px;
+
+            text-decoration:none;
+            color:#8b745c;
+
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.05);
+
+            transition:0.3s;
+        }
+
+        .small-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .small-card h5{
+            font-size:28px;
+            margin:0 0 10px;
+            font-weight:400;
+        }
+
+        .small-card p{
+            font-size:18px;
+            margin:0;
+            line-height:1.5;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media(max-width:1000px){
+
+            .cards{
+                grid-template-columns:1fr;
+            }
+
+            .center-text h3{
+                font-size:64px;
+            }
+
+            .overlay h4{
+                font-size:38px;
+            }
+
+            .overlay p{
+                font-size:18px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body style="font-family: Arial; background:#f6f1ea; text-align:center; padding:40px;">
+<body>
 
-  <h1>🌿 Salon 3MKP</h1>
-  <p>Vyber si oblast péče</p>
+    <!-- HORNÍ LIŠTA -->
 
-  <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:30px;">
+    <div class="topbar">
 
-    <a href="#" style="background:#f4a261; padding:20px; border-radius:12px; color:white; text-decoration:none;">Masáže</a>
+        <div class="logo">
 
-    <a href="#" style="background:#7b5ea7; padding:20px; border-radius:12px; color:white; text-decoration:none;">Solárium</a>
+            <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png">
 
-    <a href="#" style="background:#4ea8de; padding:20px; border-radius:12px; color:white; text-decoration:none;">Mani-Pedi</a>
+            <h1>3MKP</h1>
 
-    <a href="#" style="background:#b5651d; padding:20px; border-radius:12px; color:white; text-decoration:none;">TCM</a>
+        </div>
 
-    <a href="#" style="background:#8d6e63; padding:20px; border-radius:12px; color:white; text-decoration:none;">Salon</a>
+    </div>
 
-  </div>
+    <!-- HLAVNÍ OBSAH -->
+
+    <section class="hero">
+
+        <div class="center-text">
+
+            <h2>Vítejte v salonu</h2>
+
+            <h3>3MKP</h3>
+
+            <p>
+                Místo, kde se snoubí tradiční metody
+                s moderní péčí pro vaše tělo i mysl.
+            </p>
+
+        </div>
+
+        <!-- KARTY -->
+
+        <div class="cards">
+
+            <!-- MASÁŽE -->
+
+            <a href="#" class="card massage">
+
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200">
+
+                <div class="overlay">
+
+                    <h4>Masáže</h4>
+
+                    <p>
+                        Dotek, který léčí,
+                        uvolňuje a harmonizuje tělo.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- MANI/PEDI -->
+
+            <a href="#" class="card mani">
+
+                <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200">
+
+                <div class="overlay">
+
+                    <h4>Mani/Pedi</h4>
+
+                    <p>
+                        Krása, která začíná
+                        v detailu.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- SOLÁRIUM -->
+
+            <a href="#" class="card solarium">
+
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200">
+
+                <div class="overlay">
+
+                    <h4>Solárium</h4>
+
+                    <p>
+                        Zdravé opálení
+                        po celý rok.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- TCM -->
+
+            <a href="#" class="card tcm">
+
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200">
+
+                <div class="overlay">
+
+                    <h4>Čínská medicína</h4>
+
+                    <p>
+                        Harmonie těla,
+                        mysli a energie.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <!-- MALÉ KARTY -->
+
+        <div class="small-cards">
+
+            <a href="#" class="small-card">
+
+                <h5>📍 Kde nás najdete</h5>
+
+                <p>
+                    Adresa, kontakt
+                    a informace o salonu.
+                </p>
+
+            </a>
+
+            <a href="#" class="small-card">
+
+                <h5>🎁 Dárkové poukazy</h5>
+
+                <p>
+                    Udělejte radost
+                    péčí a relaxací.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
 
 </body>
+
 </html>
