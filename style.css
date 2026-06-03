@@ -1,215 +1,80 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================
+   BUBBLE MENU (HARMONIE)
+========================= */
+
+.bubble-menu{
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto 80px;
+    height: 340px;
 }
 
-body{
-    font-family:Georgia, serif;
-    background:
-    radial-gradient(circle at top left, #f3ddc4, transparent 40%),
-    radial-gradient(circle at top right, #e2b07a, transparent 35%),
-    radial-gradient(circle at bottom, #f7efe5, #efe2d3);
-
-    min-height:100vh;
-    color:#6e5a4a;
-    overflow-x:hidden;
-}
-
-/* TOP BAR */
-
-.topbar{
-    height:85px;
+/* základ bubliny */
+.bubble{
+    position: absolute;
     display:flex;
     align-items:center;
-    padding-left:40px;
-    background:rgba(255,255,255,0.55);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.3);
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.logo img{
-    width:50px;
-    height:50px;
+    justify-content:center;
     border-radius:50%;
-}
-
-.logo h1{
-    font-size:42px;
-    font-weight:300;
-    color:#c79a4a;
-}
-
-/* HERO */
-
-.hero{
-    text-align:center;
-    padding:50px 20px 30px;
-}
-
-.hero h2{
-    font-size:80px;
-    font-weight:300;
-    color:#b8873a;
-    margin-bottom:10px;
-}
-
-.hero p{
-    font-size:22px;
-    max-width:650px;
-    margin:0 auto;
-    line-height:1.7;
-}
-
-/* GRID */
-
-.grid{
-    max-width:1200px;
-    margin:40px auto;
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:35px;
-    padding:0 20px;
-}
-
-/* CARD */
-
-.card{
-    height:320px;
-    border-radius:40px;
-    overflow:hidden;
-    position:relative;
     text-decoration:none;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    transition:0.35s ease;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 28px 50px rgba(0,0,0,0.12);
-}
-
-.card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.overlay{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:25px;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.1),
-        transparent
-    );
-    color:white;
-}
-
-.overlay h3{
-    font-size:42px;
-    font-weight:300;
-    margin-bottom:8px;
-}
-
-.overlay p{
     font-size:18px;
-    line-height:1.5;
-    max-width:320px;
-}
-
-/* BARVY NADPISŮ */
-
-.massage h3{
-    color:#ffd39a;
-}
-
-.mani h3{
-    color:#d8f0dd;
-}
-
-.solarium h3{
-    color:#ffc77a;
-}
-
-.tcm h3{
-    color:#dcc8ff;
-}
-
-.location h3{
-    color:#bde8e3;
-}
-
-.voucher h3{
-    color:#ffe7a7;
-}
-
-/* INFO SEKCE */
-
-.info-section{
-    max-width:900px;
-    margin:70px auto 100px;
-    text-align:center;
-    padding:0 25px;
-}
-
-.info-section h2{
-    font-size:48px;
     font-weight:300;
-    color:#b8873a;
-    margin-bottom:20px;
+    color:#fff;
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+    transition:0.3s ease;
 }
 
-.info-section p{
-    font-size:20px;
-    line-height:1.9;
+/* hover */
+.bubble:hover{
+    transform: scale(1.08);
 }
 
-/* FOOTER */
+/* rozmístění (půlkruh efekt) */
 
-.footer{
-    text-align:center;
-    padding:35px 20px;
-    background:rgba(255,255,255,0.45);
-    backdrop-filter:blur(10px);
-    border-top:1px solid rgba(255,255,255,0.3);
+.massage{
+    top:50px;
+    left:10%;
+    width:120px;
+    height:120px;
+    background:#d6a86b;
 }
 
-.footer p{
-    font-size:16px;
+.mani{
+    top:0px;
+    left:40%;
+    width:110px;
+    height:110px;
+    background:#9fd3b3;
 }
 
-/* MOBIL */
+.solarium{
+    top:50px;
+    left:70%;
+    width:130px;
+    height:130px;
+    background:#f7c06a;
+}
 
-@media(max-width:900px){
+.tcm{
+    top:170px;
+    left:20%;
+    width:115px;
+    height:115px;
+    background:#b9a7ff;
+}
 
-    .grid{
-        grid-template-columns:1fr;
-    }
+.location{
+    top:180px;
+    left:55%;
+    width:115px;
+    height:115px;
+    background:#7fd0c9;
+}
 
-    .hero h2{
-        font-size:55px;
-    }
-
-    .overlay h3{
-        font-size:34px;
-    }
-
-    .info-section h2{
-        font-size:38px;
-    }
-
-    .info-section p{
-        font-size:18px;
-    }
+.voucher{
+    top:120px;
+    left:85%;
+    width:105px;
+    height:105px;
+    background:#f2d27a;
 }
