@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* odstranění "linky" a default stylů */
 a {
     text-decoration: none;
 }
@@ -26,10 +25,10 @@ a {
     margin-bottom: 25px;
 }
 
-/* klikací obrázek */
+/* klikací blok */
 .accordion-btn {
+    position: relative;
     display: block;
-    width: 100%;
     border-radius: 40px;
     overflow: hidden;
     cursor: pointer;
@@ -41,11 +40,35 @@ a {
     transform: translateY(-5px);
 }
 
+/* obrázek */
 .accordion-btn img {
     width: 100%;
     height: 320px;
     object-fit: cover;
     display: block;
+}
+
+/* tmavý overlay pro čitelnost */
+.accordion-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.05)
+    );
+}
+
+/* NADPIS NA OBRÁZKU */
+.accordion-title {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    color: white;
+    font-size: 34px;
+    font-weight: 300;
+    z-index: 2;
 }
 
 /* skrytý obsah */
@@ -58,9 +81,9 @@ a {
     padding: 0 25px;
 }
 
-/* aktivní rozbalení */
+/* otevření */
 .accordion-item.active .accordion-content {
-    max-height: 800px;
+    max-height: 900px;
     padding: 20px 25px 30px;
 }
 </style>
@@ -89,8 +112,10 @@ a {
 
     <!-- 1 SOLÁRIUM -->
     <div class="accordion-item">
+
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200" alt="Solárium">
+            <div class="accordion-title">Solárium</div>
         </div>
 
         <div class="accordion-content">
@@ -98,65 +123,68 @@ a {
             <p>
                 Solárium představuje pohodlný způsob získání přitažlivě opálené pleti.<br><br>
 
-                Opalování v soláriu je méně nebezpečné než vystavování se přírodnímu slunečnímu záření.<br><br>
+                Opalování v soláriu je méně nebezpečné než přírodní slunce.<br><br>
 
-                Blahodárné účinky UV záření jsou prokázány i lékařsky:
+                UV záření může mít i pozitivní účinky:
                 <br><br>
-                • příznivě působí na kloubní onemocnění, bolesti zad, srdce a krevní oběh, astma<br>
-                • zlepšuje kožní problémy (akné, ekzémy, lupénka, plísně)<br>
-                • stimuluje imunitní systém<br>
-                • zvyšuje výkonnost a sexualitu<br>
-                • působí protistresově a proti nachlazení
+                • klouby, záda, krevní oběh, astma<br>
+                • akné, ekzémy, lupénka<br>
+                • imunita<br>
+                • výkonnost a vitalita<br>
+                • proti stresu a nachlazení
             </p>
         </div>
     </div>
 
     <!-- 2 KRÉMY -->
     <div class="accordion-item">
+
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200" alt="Krémy">
+            <div class="accordion-title">Krémy</div>
         </div>
 
         <div class="accordion-content">
-            <h2>Krémy</h2>
+            <h2>Solární kosmetika</h2>
             <p>
-                Krémy na opalování s SPF nejsou určeny do solárií.<br><br>
+                SPF krémy nejsou do solária vhodné.<br><br>
 
-                Pro solárium používej speciální solární kosmetiku s vitamíny A a E,<br>
-                která urychluje pigmentaci a hydratuje pokožku.<br><br>
+                Používej speciální solární kosmetiku s vitamíny A a E,<br>
+                která podporuje opálení a hydrataci.<br><br>
 
-                Zpomaluje stárnutí pleti a dodává jí hebkost.<br><br>
+                Zpomaluje stárnutí pokožky a zanechává ji hebkou.<br><br>
 
-                Je k zakoupení přímo v salonu.
+                Dostupné přímo v salonu.
             </p>
         </div>
     </div>
 
     <!-- 3 DOPORUČENÍ -->
     <div class="accordion-item">
+
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200" alt="Doporučení">
+            <div class="accordion-title">Doporučení</div>
         </div>
 
         <div class="accordion-content">
-            <h2>Doporučení před první návštěvou</h2>
+            <h2>Před první návštěvou</h2>
             <p>
-                • opalování max 2× týdně<br>
-                • v jeden den nekombinovat se sluncem<br>
-                • nesprchovat se 1–2 hodiny před a po<br>
+                • max 2× týdně<br>
+                • nekombinovat se sluncem<br>
+                • nesprchovat se 1–2 h před a po<br>
                 • nevhodné pro těhotné a nemocné<br>
                 • některé léky zvyšují citlivost na UV<br>
-                • používej solární kosmetiku + beta karoten<br><br>
+                • používej kosmetiku + beta karoten<br><br>
 
-                Příprava kůže:<br>
-                Odstraň make-up a očisti pleť. Nic víc není potřeba.
+                Příprava pleti:<br>
+                Odstraň make-up a očisti pokožku.
             </p>
         </div>
     </div>
 
 </div>
 
-<!-- JS pro rozbalování -->
 <script>
 document.querySelectorAll(".accordion-item").forEach(item => {
     item.querySelector(".accordion-btn").addEventListener("click", () => {
