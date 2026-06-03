@@ -14,19 +14,19 @@
 body{
     font-family:Georgia, serif;
     background:
-    radial-gradient(circle at top left, #e7e3ff, transparent 55%),
-    radial-gradient(circle at top right, #d9e4ff, transparent 50%),
-    radial-gradient(circle at bottom, #f4f2ff, #e9e6f7);
+    radial-gradient(circle at top left, #dff6ff, transparent 55%),
+    radial-gradient(circle at top right, #cfefff, transparent 50%),
+    radial-gradient(circle at bottom, #f4fbff, #e6f2f8);
 
     min-height:100vh;
-    color:#4a3f66;
+    color:#2f4a5a;
 }
 
 /* TOP BAR */
 .topbar{
-    background:rgba(255,255,255,0.6);
+    background:rgba(255,255,255,0.65);
     backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(120, 110, 180, 0.15);
+    border-bottom:1px solid rgba(120, 170, 190, 0.2);
 }
 
 .logo{
@@ -37,7 +37,7 @@ body{
 }
 
 .logo h1{
-    color:#7b6bd6;
+    color:#3a8aa8;
     font-weight:300;
 }
 
@@ -50,7 +50,7 @@ body{
 .hero h2{
     font-size:80px;
     font-weight:300;
-    color:#6d5bd0;
+    color:#2f7f9f;
     margin-bottom:10px;
 }
 
@@ -59,7 +59,7 @@ body{
     max-width:650px;
     margin:0 auto;
     line-height:1.7;
-    color:#4a3f66;
+    color:#2f4a5a;
 }
 
 /* ACCORDION */
@@ -80,13 +80,13 @@ body{
     border-radius: 40px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 18px 35px rgba(60,40,120,0.15);
+    box-shadow: 0 18px 35px rgba(40,120,140,0.15);
     transition: 0.3s ease;
 }
 
 .accordion-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(120, 100, 255, 0.18);
+    box-shadow: 0 25px 55px rgba(60,150,180,0.25);
 }
 
 /* obrázek */
@@ -97,14 +97,14 @@ body{
     display: block;
 }
 
-/* jemný overlay */
+/* mořský overlay */
 .accordion-btn::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(40, 30, 90, 0.35),
+        rgba(0, 70, 100, 0.35),
         rgba(255,255,255,0.05)
     );
 }
@@ -118,7 +118,7 @@ body{
     font-size: 34px;
     font-weight: 300;
     z-index: 2;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
 }
 
 /* rozbalený obsah */
@@ -126,8 +126,8 @@ body{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    background: rgba(255,255,255,0.65);
-    color:#4a3f66;
+    background: rgba(255,255,255,0.7);
+    color:#2f4a5a;
     border-radius: 0 0 30px 30px;
     padding: 0 25px;
 }
@@ -155,12 +155,13 @@ body{
 <!-- HERO -->
 <div class="hero">
     <h2>Solárium</h2>
-    <p>Jemné opálení, relaxace a péče o tělo.</p>
+    <p>Jemné opálení, relaxace a dotek moře pro tělo i mysl.</p>
 </div>
 
 <!-- ACCORDION -->
 <div class="accordion">
 
+    <!-- SOLÁRIUM -->
     <div class="accordion-item">
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200" alt="Solárium">
@@ -170,19 +171,20 @@ body{
         <div class="accordion-content">
             <h2>Proč se opalovat</h2>
             <p>
-                Solárium je pohodlný způsob získání opálené pleti.<br><br>
+                Solárium je jemný způsob získání opálené pokožky.<br><br>
 
                 UV záření může mít i pozitivní účinky:<br><br>
 
-                • klouby, záda, krevní oběh<br>
-                • kožní problémy (akné, ekzémy, lupénka)<br>
+                • klouby a pohybový aparát<br>
+                • kožní problémy (akné, ekzémy)<br>
                 • imunita<br>
-                • vitalita<br>
-                • relax a snížení stresu
+                • energie a vitalita<br>
+                • uvolnění stresu
             </p>
         </div>
     </div>
 
+    <!-- KRÉMY -->
     <div class="accordion-item">
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200" alt="Krémy">
@@ -195,13 +197,14 @@ body{
                 SPF krémy nejsou vhodné do solária.<br><br>
 
                 Používej solární kosmetiku s vitamíny A a E,<br>
-                která podporuje opálení a hydrataci.<br><br>
+                která podporuje opálení a hydrataci pokožky.<br><br>
 
-                Pokožka zůstává jemná a hydratovaná.
+                Pokožka zůstává jemná, hydratovaná a svěží.
             </p>
         </div>
     </div>
 
+    <!-- DOPORUČENÍ -->
     <div class="accordion-item">
         <div class="accordion-btn">
             <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200" alt="Doporučení">
@@ -214,8 +217,8 @@ body{
                 • max 2× týdně<br>
                 • nekombinovat se sluncem<br>
                 • nesprchovat se 1–2 h před/po<br>
-                • nevhodné pro těhotné<br>
-                • odstranit make-up před návštěvou
+                • odstranit make-up<br>
+                • poslouchat reakce těla
             </p>
         </div>
     </div>
