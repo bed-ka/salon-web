@@ -8,6 +8,63 @@
 <title>Solárium | 3MKP</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* odstranění "linky" a default stylů */
+a {
+    text-decoration: none;
+}
+
+/* ACCORDION */
+.accordion {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.accordion-item {
+    margin-bottom: 25px;
+}
+
+/* klikací obrázek */
+.accordion-btn {
+    display: block;
+    width: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.accordion-btn:hover {
+    transform: translateY(-5px);
+}
+
+.accordion-btn img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* skrytý obsah */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(255,255,255,0.6);
+    border-radius: 0 0 30px 30px;
+    padding: 0 25px;
+}
+
+/* aktivní rozbalení */
+.accordion-item.active .accordion-content {
+    max-height: 800px;
+    padding: 20px 25px 30px;
+}
+</style>
+
 </head>
 
 <body>
@@ -23,71 +80,90 @@
 <!-- HERO -->
 <div class="hero">
     <h2>Solárium</h2>
-    <p>
-        Jemné opálení, relaxace a pocit tepla pro tělo i mysl.
-    </p>
+    <p>Jemné opálení, relaxace a péče o tělo.</p>
 </div>
 
-<!-- MENU KARTY (STEJNÝ STYL JAKO INDEX) -->
-<div class="grid">
+<!-- ACCORDION -->
 
-    <!-- SOLÁRIUM INFO -->
-    <a href="#solarium" class="card solarium">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200" alt="Solárium">
+<div class="accordion">
 
-        <div class="overlay">
-            <h3>Solárium</h3>
-            <p>Jak funguje, délka opalování a bezpečnost.</p>
+    <!-- 1 SOLÁRIUM -->
+    <div class="accordion-item">
+        <div class="accordion-btn">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200" alt="Solárium">
         </div>
-    </a>
 
-    <!-- KRÉMY -->
-    <a href="#kremy" class="card">
-        <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200" alt="Krémy">
+        <div class="accordion-content">
+            <h2>Solárium – Proč se opalovat</h2>
+            <p>
+                Solárium představuje pohodlný způsob získání přitažlivě opálené pleti.<br><br>
 
-        <div class="overlay">
-            <h3>Krémy</h3>
-            <p>Jaké používat před a po opalování.</p>
+                Opalování v soláriu je méně nebezpečné než vystavování se přírodnímu slunečnímu záření.<br><br>
+
+                Blahodárné účinky UV záření jsou prokázány i lékařsky:
+                <br><br>
+                • příznivě působí na kloubní onemocnění, bolesti zad, srdce a krevní oběh, astma<br>
+                • zlepšuje kožní problémy (akné, ekzémy, lupénka, plísně)<br>
+                • stimuluje imunitní systém<br>
+                • zvyšuje výkonnost a sexualitu<br>
+                • působí protistresově a proti nachlazení
+            </p>
         </div>
-    </a>
+    </div>
 
-    <!-- DOPORUČENÍ -->
-    <a href="#doporučení" class="card">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200" alt="Doporučení">
-
-        <div class="overlay">
-            <h3>První návštěva</h3>
-            <p>Co si pohlídat před prvním opalováním.</p>
+    <!-- 2 KRÉMY -->
+    <div class="accordion-item">
+        <div class="accordion-btn">
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200" alt="Krémy">
         </div>
-    </a>
+
+        <div class="accordion-content">
+            <h2>Krémy</h2>
+            <p>
+                Krémy na opalování s SPF nejsou určeny do solárií.<br><br>
+
+                Pro solárium používej speciální solární kosmetiku s vitamíny A a E,<br>
+                která urychluje pigmentaci a hydratuje pokožku.<br><br>
+
+                Zpomaluje stárnutí pleti a dodává jí hebkost.<br><br>
+
+                Je k zakoupení přímo v salonu.
+            </p>
+        </div>
+    </div>
+
+    <!-- 3 DOPORUČENÍ -->
+    <div class="accordion-item">
+        <div class="accordion-btn">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200" alt="Doporučení">
+        </div>
+
+        <div class="accordion-content">
+            <h2>Doporučení před první návštěvou</h2>
+            <p>
+                • opalování max 2× týdně<br>
+                • v jeden den nekombinovat se sluncem<br>
+                • nesprchovat se 1–2 hodiny před a po<br>
+                • nevhodné pro těhotné a nemocné<br>
+                • některé léky zvyšují citlivost na UV<br>
+                • používej solární kosmetiku + beta karoten<br><br>
+
+                Příprava kůže:<br>
+                Odstraň make-up a očisti pleť. Nic víc není potřeba.
+            </p>
+        </div>
+    </div>
 
 </div>
 
-<!-- OBSAH SEKCE -->
-
-<div class="info-section" id="solarium">
-    <h2>Solárium</h2>
-    <p>
-        Solárium pomáhá jemně zlepšit tón pleti a dodat pocit tepla a relaxace.
-        Doporučujeme začínat krátkými intervaly a postupně prodlužovat.
-    </p>
-</div>
-
-<div class="info-section" id="kremy">
-    <h2>Krémy</h2>
-    <p>
-        Používej speciální solární krémy – chrání pokožku a zároveň podporují rovnoměrné opálení.
-        Po opalování je důležitá hydratace.
-    </p>
-</div>
-
-<div class="info-section" id="doporučení">
-    <h2>Doporučení před první návštěvou</h2>
-    <p>
-        Neopaluj se s make-upem, odstraň parfém a používej ochranné brýle.
-        Začni vždy kratší dobou a sleduj reakci pokožky.
-    </p>
-</div>
+<!-- JS pro rozbalování -->
+<script>
+document.querySelectorAll(".accordion-item").forEach(item => {
+    item.querySelector(".accordion-btn").addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+</script>
 
 </body>
 </html>
