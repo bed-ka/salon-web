@@ -10,91 +10,17 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #faf7f5;
-        color: #3a3a3a;
-    }
+/* jednoduché rozložení pro vedle sebe */
+.services {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
 
-    /* TOP BAR */
-    .topbar {
-        background: #ffffff;
-        padding: 15px 25px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        position: sticky;
-        top: 0;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        color: #3a3a3a;
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .logo img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .logo:hover {
-        opacity: 0.7;
-    }
-
-    /* OBSAH */
-    .info-section {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-        margin-top: 0;
-        font-size: 28px;
-        color: #2f2f2f;
-    }
-
-    p {
-        line-height: 1.6;
-    }
-
-    /* BUTTON */
-    .map-button {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 12px 18px;
-        background: #b58a72;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 10px;
-        transition: 0.2s;
-    }
-
-    .map-button:hover {
-        background: #9c6f59;
-    }
-
-    /* MAPA */
-    .map-container {
-        margin-top: 25px;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    iframe {
-        width: 100%;
-        height: 320px;
-        border: 0;
-    }
-
+.service-box {
+    flex: 1;
+    min-width: 250px;
+}
 </style>
 
 </head>
@@ -105,7 +31,7 @@
 <div class="topbar">
     <a href="index.html" class="logo">
         <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="3MKP logo">
-        <span>3MKP</span>
+        <h1>3MKP</h1>
     </a>
 </div>
 
@@ -115,31 +41,12 @@
     <h2>Kde nás najdete</h2>
 
     <p>
-        Salon 3MKP najdete v klidné lokalitě s dobrou dostupností a příjemnou atmosférou.
+        Salon 3MKP najdete v klidné lokalitě s dobrou dostupností.
     </p>
 
-    <p>
-        <strong>Adresa:</strong><br>
-        Mikulášovice 2, 407 79 Mikulášovice
-    </p>
+    <br>
 
-    <a class="map-button"
-       href="https://www.google.com/maps/search/?api=1&query=Mikulášovice%202%2C%20407%2079%20Mikulášovice"
-       target="_blank">
-       Otevřít v Google Mapách
-    </a>
-
-    <!-- MAPA -->
-    <div class="map-container">
-        <iframe
-            src="https://www.google.com/maps?q=Mikulášovice%202%2C%20407%2079%20Mikulášovice&output=embed"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
-    </div>
-
-    <br><br>
-
+    <!-- TELEFONY + OTEVÍRACÍ DOBA NAHOŘE -->
     <p>
         <strong>Telefon:</strong><br>
         Manikúra-Pedikúra a Solárium<br>    
@@ -149,10 +56,49 @@
         +420 775 413 221
     </p>
 
+    <br>
+
     <p>
         <strong>Otevírací doba:</strong><br>
         Po–Pá: dle objednávek
     </p>
+
+    <br><br>
+
+    <!-- SLUŽBY VEDLE SEBE -->
+    <div class="services">
+
+        <div class="service-box">
+            <strong>Manikúra – Pedikúra a Solárium</strong><br>
+            +420 606 580 435
+        </div>
+
+        <div class="service-box">
+            <strong>Masáže a Tradiční čínská medicína</strong><br>
+            +420 775 413 221
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- ADRESA -->
+    <p>
+        <strong>Adresa:</strong><br>
+        Mikulášovice 2, 407 79 Mikulášovice
+    </p>
+
+    <br>
+
+    <!-- MAPA (EMBED GOOGLE MAPS) -->
+    <iframe
+        src="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice&output=embed"
+        width="100%"
+        height="350"
+        style="border:0; border-radius:10px;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
 
 </div>
 
