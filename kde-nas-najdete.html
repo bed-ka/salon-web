@@ -10,7 +10,16 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* jednoduché rozložení pro vedle sebe */
+/* TOP LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* TELEFONY VEDLE SEBE */
 .services {
     display: flex;
     gap: 40px;
@@ -20,6 +29,21 @@
 .service-box {
     flex: 1;
     min-width: 250px;
+}
+
+/* MAPA TLAČÍTKO */
+.map-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.map-button:hover {
+    opacity: 0.9;
 }
 </style>
 
@@ -46,8 +70,16 @@
 
     <br>
 
-    <!-- TELEFONY + OTEVÍRACÍ DOBA NAHOŘE -->
-   <div class="services">
+    <!-- OTEVÍRACÍ DOBA -->
+    <p>
+        <strong>Otevírací doba:</strong><br>
+        Po–Pá: dle objednávek
+    </p>
+
+    <br>
+
+    <!-- TELEFONY VEDLE SEBE -->
+    <div class="services">
 
         <div class="service-box">
             <strong>Manikúra – Pedikúra a Solárium</strong><br>
@@ -62,7 +94,6 @@
     </div>
 
     <br><br>
-    
 
     <!-- ADRESA -->
     <p>
@@ -72,13 +103,21 @@
 
     <br>
 
-    <!-- MAPA (EMBED GOOGLE MAPS) -->
+    <!-- MAPA TLAČÍTKO -->
+    <a class="map-button"
+       href="https://www.google.com/maps/search/?api=1&query=Mikulášovice%202%2C%20407%2079%20Mikulášovice"
+       target="_blank">
+       Otevřít v Google Mapách
+    </a>
+
+    <br><br>
+
+    <!-- MAPA EMBED -->
     <iframe
         src="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice&output=embed"
         width="100%"
         height="350"
         style="border:0; border-radius:10px;"
-        allowfullscreen=""
         loading="lazy">
     </iframe>
 
