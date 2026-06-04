@@ -22,7 +22,8 @@ body{
     height:85px;
     display:flex;
     align-items:center;
-    padding-left:40px;
+    justify-content:space-between;
+    padding:0 40px;
     background:rgba(255,255,255,0.55);
     backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,0.3);
@@ -44,6 +45,28 @@ body{
     font-size:42px;
     font-weight:300;
     color:#c79a4a;
+}
+
+/* HORNÍ MENU */
+
+.top-links{
+    display:flex;
+    gap:12px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#6e5a4a;
+    font-size:16px;
+    padding:10px 16px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(8px);
+    transition:0.3s ease;
+}
+
+.top-links a:hover{
+    background:rgba(255,255,255,0.75);
 }
 
 /* HERO */
@@ -146,14 +169,6 @@ body{
     color:#dcc8ff;
 }
 
-.location h3{
-    color:#bde8e3;
-}
-
-.voucher h3{
-    color:#ffe7a7;
-}
-
 /* INFO SEKCE */
 
 .info-section{
@@ -192,6 +207,18 @@ body{
 /* MOBIL */
 
 @media(max-width:900px){
+
+    .topbar{
+        flex-direction:column;
+        height:auto;
+        gap:12px;
+        padding:15px;
+    }
+
+    .top-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
     .grid{
         grid-template-columns:1fr;
