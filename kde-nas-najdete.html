@@ -10,52 +10,17 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-
-/* ===== TOP LOGO ===== */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===== HLAVNÍ OBSAH (OPRAVA ZAROVNÁNÍ) ===== */
-.info-section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* ===== TELEFONY VEDLE SEBE ===== */
+/* jednoduché rozložení pro vedle sebe */
 .services {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
-    margin-top: 10px;
 }
 
 .service-box {
     flex: 1;
     min-width: 250px;
 }
-
-/* ===== MAPA TLAČÍTKO ===== */
-.map-button {
-    display: inline-block;
-    padding: 10px 16px;
-    background: #2c3e50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    margin-top: 10px;
-}
-
-.map-button:hover {
-    opacity: 0.9;
-}
-
 </style>
 
 </head>
@@ -65,7 +30,7 @@
 <!-- TOP -->
 <div class="topbar">
     <a href="index.html" class="logo">
-        <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="3MKP logo" width="40">
+        <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="3MKP logo">
         <h1>3MKP</h1>
     </a>
 </div>
@@ -79,16 +44,28 @@
         Salon 3MKP najdete v klidné lokalitě s dobrou dostupností.
     </p>
 
+    <br>
+
+    <!-- TELEFONY + OTEVÍRACÍ DOBA NAHOŘE -->
+    <p>
+        <strong>Telefon:</strong><br>
+        Manikúra-Pedikúra a Solárium<br>    
+        +420 606 580 435<br>  
+        <br>
+        Masáže a Tradiční čínská medicína<br>
+        +420 775 413 221
+    </p>
+
+    <br>
+
     <p>
         <strong>Otevírací doba:</strong><br>
         Po–Pá: dle objednávek
     </p>
 
-    <p>
-        <strong>Telefon:</strong>
-    </p>
+    <br><br>
 
-    <!-- TELEFONY -->
+    <!-- SLUŽBY VEDLE SEBE -->
     <div class="services">
 
         <div class="service-box">
@@ -103,26 +80,23 @@
 
     </div>
 
-    <p style="margin-top:20px;">
+    <br><br>
+
+    <!-- ADRESA -->
+    <p>
         <strong>Adresa:</strong><br>
         Mikulášovice 2, 407 79 Mikulášovice
     </p>
 
-    <!-- MAPA TLAČÍTKO -->
-    <a class="map-button"
-       href="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice"
-       target="_blank">
-       Otevřít v Google Mapách
-    </a>
+    <br>
 
-    <br><br>
-
-    <!-- MAPA -->
+    <!-- MAPA (EMBED GOOGLE MAPS) -->
     <iframe
         src="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice&output=embed"
         width="100%"
         height="350"
         style="border:0; border-radius:10px;"
+        allowfullscreen=""
         loading="lazy">
     </iframe>
 
