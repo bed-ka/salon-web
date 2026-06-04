@@ -20,22 +20,43 @@
     color: inherit;
 }
 
-/* CENTROVÁNÍ OBSAHU BEZ POSUNU LAYOUTU */
+/* HLAVNÍ KONTEJNER – jemný kosmetický styl */
 .info-section{
     text-align: center;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 25px;
 }
 
-/* TELEFONY VEDLE SEBE */
+/* nadpis */
+.info-section h2{
+    margin-bottom: 15px;
+}
+
+/* text – vzdušnější, elegantnější */
+.info-section p{
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    color: #6e5a4a;
+}
+
+/* TELEFONY */
 .services {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 20px 0;
 }
 
 .service-box {
     flex: 1;
-    min-width: 250px;
+    min-width: 240px;
+    padding: 15px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
 }
 
 /* MAPA TLAČÍTKO */
@@ -47,10 +68,19 @@
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
+    margin-top: 10px;
 }
 
 .map-button:hover {
     opacity: 0.9;
+}
+
+/* MAPA */
+iframe {
+    margin-top: 20px;
+    width: 100%;
+    border:0;
+    border-radius:12px;
 }
 
 </style>
@@ -76,14 +106,10 @@
         Salon 3MKP najdete v klidné lokalitě s dobrou dostupností.
     </p>
 
-    <br>
-
     <p>
         <strong>Otevírací doba:</strong><br>
         Po–Pá: dle objednávek
     </p>
-
-    <br>
 
     <!-- TELEFONY -->
     <div class="services">
@@ -94,35 +120,26 @@
         </div>
 
         <div class="service-box">
-            <strong>Masáže a Tradiční čínská medicína</strong><br>
+            <strong>Masáže a TCM</strong><br>
             +420 775 413 221
         </div>
 
     </div>
-
-    <br><br>
 
     <p>
         <strong>Adresa:</strong><br>
         Mikulášovice 2, 407 79 Mikulášovice
     </p>
 
-    <br>
-
     <a class="map-button"
-       href="https://www.google.com/maps/search/?api=1&query=Mikulashovice+2+407+79+Mikulashovice"
+       href="https://www.google.com/maps/search/?api=1&query=Mikulasovice+2+407+79+Czechia"
        target="_blank">
        Otevřít v Google Mapách
     </a>
 
-    <br><br>
-
     <iframe
-        src="https://www.google.com/maps?q=Mikulashovice+2+407+79+Mikulashovice&output=embed"
-        width="100%"
-        height="350"
-        style="border:0; border-radius:10px;"
-        loading="lazy">
+        src="https://www.google.com/maps?q=Mikulasovice+2+407+79+Czechia&output=embed"
+        height="350">
     </iframe>
 
 </div>
