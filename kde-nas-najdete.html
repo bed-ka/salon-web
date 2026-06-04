@@ -20,7 +20,7 @@
     color: inherit;
 }
 
-/* HLAVNÍ KONTEJNER – jemný kosmetický styl */
+/* HLAVNÍ KONTEJNER */
 .info-section{
     text-align: center;
     max-width: 900px;
@@ -28,12 +28,12 @@
     padding: 0 25px;
 }
 
-/* nadpis */
+/* NADPIS */
 .info-section h2{
     margin-bottom: 15px;
 }
 
-/* text – vzdušnější, elegantnější */
+/* TEXT */
 .info-section p{
     font-size: 18px;
     line-height: 1.9;
@@ -79,8 +79,8 @@
 iframe {
     margin-top: 20px;
     width: 100%;
-    border:0;
-    border-radius:12px;
+    border: 0;
+    border-radius: 12px;
 }
 
 </style>
@@ -120,7 +120,7 @@ iframe {
         </div>
 
         <div class="service-box">
-            <strong>Masáže a Tradiční Čínská Medicína</strong><br>
+            <strong>Masáže a Tradiční čínská medicína</strong><br>
             +420 775 413 221
         </div>
 
@@ -131,15 +131,18 @@ iframe {
         Mikulášovice 2, 407 79 Mikulášovice
     </p>
 
+    <!-- TLAČÍTKO MAPA -->
     <a class="map-button"
-       href="https://www.google.com/maps?q=Mikulasovice+2+407+79+Czechia&output=embed"
+       href="https://www.google.com/maps/place/Mikul%C3%A1%C5%A1ovice+2,+407+79+Mikul%C3%A1%C5%A1ovice"
        target="_blank">
        Otevřít v Google Mapách
     </a>
 
+    <!-- EMBED MAPA (SPRÁVNÁ VERZE) -->
     <iframe
-        src="https://www.google.com/maps?q=Mikulasovice+2+407+79+Czechia&output=embed"
-        height="350">
+        src="https://www.google.com/maps?q=Mikul%C3%A1%C5%A1ovice%202%2C%20407%2079%20Czechia&output=embed"
+        height="350"
+        loading="lazy">
     </iframe>
 
 </div>
