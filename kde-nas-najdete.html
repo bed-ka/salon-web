@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* TOP LOGO */
+
+/* ===== TOP LOGO ===== */
 .logo {
     display: flex;
     align-items: center;
@@ -19,11 +20,19 @@
     color: inherit;
 }
 
-/* TELEFONY VEDLE SEBE */
+/* ===== HLAVNÍ OBSAH (OPRAVA ZAROVNÁNÍ) ===== */
+.info-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== TELEFONY VEDLE SEBE ===== */
 .services {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .service-box {
@@ -31,7 +40,7 @@
     min-width: 250px;
 }
 
-/* MAPA TLAČÍTKO */
+/* ===== MAPA TLAČÍTKO ===== */
 .map-button {
     display: inline-block;
     padding: 10px 16px;
@@ -40,11 +49,13 @@
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
+    margin-top: 10px;
 }
 
 .map-button:hover {
     opacity: 0.9;
 }
+
 </style>
 
 </head>
@@ -54,7 +65,7 @@
 <!-- TOP -->
 <div class="topbar">
     <a href="index.html" class="logo">
-        <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="3MKP logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="3MKP logo" width="40">
         <h1>3MKP</h1>
     </a>
 </div>
@@ -68,25 +79,18 @@
         Salon 3MKP najdete v klidné lokalitě s dobrou dostupností.
     </p>
 
-    <br>
-
-    <!-- OTEVÍRACÍ DOBA -->
     <p>
         <strong>Otevírací doba:</strong><br>
         Po–Pá: dle objednávek
     </p>
 
-    <br>
-
-    <!-- TELEFONY VEDLE SEBE -->
     <p>
-        <strong>Telefon:</strong><br>
-
-        <br>
+        <strong>Telefon:</strong>
     </p>
-    
+
+    <!-- TELEFONY -->
     <div class="services">
-        
+
         <div class="service-box">
             <strong>Manikúra – Pedikúra a Solárium</strong><br>
             +420 606 580 435
@@ -99,26 +103,21 @@
 
     </div>
 
-    <br><br>
-
-    <!-- ADRESA -->
-    <p>
+    <p style="margin-top:20px;">
         <strong>Adresa:</strong><br>
         Mikulášovice 2, 407 79 Mikulášovice
     </p>
 
-    <br>
-
     <!-- MAPA TLAČÍTKO -->
     <a class="map-button"
-       href="https://www.google.com/maps/search/?api=1&query=Mikulášovice%202%2C%20407%2079%20Mikulášovice"
+       href="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice"
        target="_blank">
        Otevřít v Google Mapách
     </a>
 
     <br><br>
 
-    <!-- MAPA EMBED -->
+    <!-- MAPA -->
     <iframe
         src="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice&output=embed"
         width="100%"
