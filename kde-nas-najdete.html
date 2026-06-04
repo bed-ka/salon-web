@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+
 /* TOP LOGO */
 .logo {
     display: flex;
@@ -19,11 +20,17 @@
     color: inherit;
 }
 
+/* CENTROVÁNÍ OBSAHU BEZ POSUNU LAYOUTU */
+.info-section{
+    text-align: center;
+}
+
 /* TELEFONY VEDLE SEBE */
 .services {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .service-box {
@@ -45,6 +52,7 @@
 .map-button:hover {
     opacity: 0.9;
 }
+
 </style>
 
 </head>
@@ -70,7 +78,6 @@
 
     <br>
 
-    <!-- OTEVÍRACÍ DOBA -->
     <p>
         <strong>Otevírací doba:</strong><br>
         Po–Pá: dle objednávek
@@ -78,7 +85,7 @@
 
     <br>
 
-    <!-- TELEFONY VEDLE SEBE -->
+    <!-- TELEFONY -->
     <div class="services">
 
         <div class="service-box">
@@ -95,7 +102,6 @@
 
     <br><br>
 
-    <!-- ADRESA -->
     <p>
         <strong>Adresa:</strong><br>
         Mikulášovice 2, 407 79 Mikulášovice
@@ -103,18 +109,16 @@
 
     <br>
 
-    <!-- MAPA TLAČÍTKO -->
     <a class="map-button"
-       href="https://www.google.com/maps/search/?api=1&query=Mikulášovice%202%2C%20407%2079%20Mikulášovice"
+       href="https://www.google.com/maps/search/?api=1&query=Mikulashovice+2+407+79+Mikulashovice"
        target="_blank">
        Otevřít v Google Mapách
     </a>
 
     <br><br>
 
-    <!-- MAPA EMBED -->
     <iframe
-        src="https://www.google.com/maps?q=Mikulášovice%202,%20407%2079%20Mikulášovice&output=embed"
+        src="https://www.google.com/maps?q=Mikulashovice+2+407+79+Mikulashovice&output=embed"
         width="100%"
         height="350"
         style="border:0; border-radius:10px;"
